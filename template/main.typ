@@ -1,4 +1,4 @@
-#import "@local/simple-resume:0.1.0": resume
+#import "@local/simple-resume:0.1.1": resume
 
 // A single generic row is enough for education, work, projects, and leadership.
 #let dated(title, date) = grid(
@@ -10,6 +10,13 @@
 
 #show: resume.with(
   name: "Ada Lovelace",
+  tagline: "Software Engineer",
+  summary: [
+    Computer Science student and software engineer with experience building
+    scalable web services, developer tools, and data-driven products. Comfortable
+    taking ideas from early prototypes to dependable implementations, with an
+    emphasis on reliable systems, maintainable code, and thoughtful user experiences.
+  ],
   phone: "(919) 110-0110",
   email: "adalove@gmail.com",
   address: "Chapel Hill, NC",

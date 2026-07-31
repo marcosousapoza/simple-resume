@@ -1,6 +1,8 @@
 // A compact, traditional resume inspired by classic one-page academic layouts.
 #let resume(
   name: "",
+  tagline: none,
+  summary: none,
   phone: none,
   email: none,
   address: none,
@@ -41,34 +43,48 @@
 
   let details = (phone, email, address) + links
   let details = details.filter(item => item != none)
-  let header = align(center)[
-    #block(below: 1.35em)[
-      #text(size: 17pt, weight: "bold", name)
-    ]
-    #if details.len() > 0 {
-      text(size: 9pt, details.join([ #h(0.35em)|#h(0.35em) ]))
+  let identity = [
+    #text(size: 17pt, weight: "bold", name)
+    #if tagline != none {
+      linebreak()
+      text(size: 9pt, style: "italic", tagline)
     }
-    #v(0.28em)
+    #if summary != none {
+      block(above: 0.45em)[
+        #set par(leading: 0.55em)
+        #text(size: 8.7pt, summary)
+      ]
+    }
+    #if details.len() > 0 {
+      block(above: 0.2em)[
+        #text(size: 8.6pt, details.join([ #h(0.35em)|#h(0.35em) ]))
+      ]
+    }
   ]
 
-  if photo == none {
-    header
+  let profile = if photo == none {
+    identity
   } else {
-    block(width: 100%, height: 0.76in)[
-      #header
-      #place(top + right)[
+    grid(
+      columns: (1fr, 0.82in),
+      column-gutter: 0.22in,
+      align(top, identity),
+      align(top + right)[
         #box(
-          width: 0.7in,
-          height: 0.7in,
-          radius: 50%,
+          width: 0.82in,
+          height: 0.92in,
+          radius: 2pt,
           clip: true,
+          stroke: 0.4pt,
         )[
           #set image(width: 100%, height: 100%, fit: "cover")
           #photo
         ]
-      ]
-    ]
+      ],
+    )
   }
+
+  profile
 
   body
 }
