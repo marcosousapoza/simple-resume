@@ -1,4 +1,4 @@
-#import "@local/simple-resume:0.1.1": resume
+#import "@local/simple-resume:0.2.0": resume
 
 // A single generic row is enough for education, work, projects, and leadership.
 #let dated(title, date) = grid(
