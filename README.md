@@ -21,6 +21,7 @@ A compact Typst resume template with a traditional, single-column layout.
   address: "London, UK",
   links: (link("https://example.com")[Portfolio],),
   photo: none,
+  photo-size: (width: 0.82in, height: 0.92in),
 )
 
 = Education
@@ -30,5 +31,6 @@ Your resume content goes here.
 
 `tagline`, `summary`, and `photo` are optional. `photo` accepts content such as
 `image("photo.jpg")` and is cropped to a bordered portrait without changing its
-aspect ratio. Only `resume` is exported; sections and entries use regular Typst
-content.
+aspect ratio. Adjust the portrait frame with `photo-size`, for example
+`(width: 1in, height: 1.12in)`. Only `resume` is exported; sections and entries
+use regular Typst content.

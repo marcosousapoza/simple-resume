@@ -8,6 +8,7 @@
   address: none,
   links: (),
   photo: none,
+  photo-size: (width: 0.82in, height: 0.92in),
   body,
 ) = {
   set document(title: name, author: name)
@@ -66,13 +67,13 @@
     identity
   } else {
     grid(
-      columns: (1fr, 0.82in),
+      columns: (1fr, photo-size.width),
       column-gutter: 0.22in,
       align(top, identity),
       align(top + right)[
         #box(
-          width: 0.82in,
-          height: 0.92in,
+          width: photo-size.width,
+          height: photo-size.height,
           radius: 2pt,
           clip: true,
           stroke: 0.4pt,

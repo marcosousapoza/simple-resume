@@ -26,6 +26,7 @@
   ),
   // To add a portrait, use: photo: image("photo.jpg"),
   photo: none,
+  photo-size: (width: 0.82in, height: 0.92in),
 )
 
 = Education
