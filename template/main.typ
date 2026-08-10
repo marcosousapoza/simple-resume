@@ -1,4 +1,4 @@
-#import "@local/simple-resume:0.3.5": resume, entry
+#import "@local/simple-resume:0.3.6": resume, entry
 
 #show: resume.with(
   name: "Ada Lovelace",
