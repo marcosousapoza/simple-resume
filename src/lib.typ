@@ -40,7 +40,7 @@
         if grade == none {
           []
         } else {
-          align(right, text(size: 8.8pt, weight: "medium", [Grade: #grade]))
+          align(right, text(size: 8.8pt, weight: "medium", grade))
         },
       )
     }
