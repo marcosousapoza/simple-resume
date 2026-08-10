@@ -9,12 +9,10 @@
   let title-line = if location == none {
     title
   } else {
-    [#title #text(size: 8.5pt, weight: "regular", fill: rgb("555555"))[
-      | #location
-    ]]
+    [#title#h(0.4em)#text(size: 8.5pt, weight: "regular", fill: rgb("666666"))[·#h(0.4em)#location]]
   }
 
-  block(above: 0.4em, below: 0.32em, breakable: false)[
+  block(above: 0.7em, below: 0.3em, breakable: false)[
     #if subtitle == none and grade == none {
       grid(
         columns: (1fr, auto),
@@ -61,26 +59,27 @@
   set document(title: name, author: name)
   set page(
     paper: "us-letter",
-    margin: (x: 0.32in, top: 0.27in, bottom: 0.3in),
+    margin: (x: 0.5in, top: 0.32in, bottom: 0.4in),
   )
   set text(
     font: ("Nimbus Roman", "Liberation Serif"),
     size: 9.8pt,
     lang: "en",
   )
-  set par(leading: 0.72em, spacing: 0.9em)
-  set block(spacing: 0.95em)
+  set par(leading: 0.76em, spacing: 0.85em)
+  set block(spacing: 0.85em)
   set list(
     marker: [•],
     indent: 0.1em,
     body-indent: 0.55em,
-    spacing: 0.55em,
+    spacing: 0.75em,
   )
+  show list: set block(below: 1.1em)
 
   show link: it => underline(text(fill: rgb("0563c1"), it))
   show heading.where(level: 1): it => block(
-    above: 1.15em,
-    below: 0.4em,
+    above: 1.05em,
+    below: 0.44em,
     width: 100%,
     inset: (bottom: 0.18em),
     stroke: (bottom: 0.7pt),
@@ -98,13 +97,13 @@
       text(size: 9pt, style: "italic", tagline)
     }
     #if summary != none {
-      block(above: 0.45em)[
+      block(above: 0.4em)[
         #set par(leading: 0.55em)
         #text(size: 8.7pt, summary)
       ]
     }
     #if details.len() > 0 {
-      block(above: 0.2em)[
+      block(above: 0.28em)[
         #text(size: 8.6pt, details.join([ #h(0.35em)|#h(0.35em) ]))
       ]
     }
