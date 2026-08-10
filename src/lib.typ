@@ -35,7 +35,7 @@
         if subtitle == none {
           []
         } else {
-          text(size: 9.2pt, weight: "medium", style: "italic", subtitle)
+          text(size: 9.2pt, weight: "semibold", style: "italic", subtitle)
         },
         if grade == none {
           []
