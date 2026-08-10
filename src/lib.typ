@@ -14,7 +14,7 @@
 
   block(
     above: 0.7em,
-    below: if subtitle == none and grade == none { 0.3em } else { 1.15em },
+    below: if subtitle == none and grade == none { 0.3em } else { 0.8625em },
     breakable: false,
   )[
     #if subtitle == none and grade == none {
