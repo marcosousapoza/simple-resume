@@ -12,7 +12,11 @@
     [#title#h(0.4em)#text(size: 8.5pt, weight: "regular", fill: rgb("666666"))[·#h(0.4em)#location]]
   }
 
-  block(above: 0.7em, below: 0.3em, breakable: false)[
+  block(
+    above: 0.7em,
+    below: if subtitle == none and grade == none { 0.3em } else { 1.15em },
+    breakable: false,
+  )[
     #if subtitle == none and grade == none {
       grid(
         columns: (1fr, auto),
