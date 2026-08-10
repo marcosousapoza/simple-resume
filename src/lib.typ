@@ -14,7 +14,7 @@
     ]]
   }
 
-  block(above: 0.55em, below: 0.18em, breakable: false)[
+  block(above: 0.4em, below: 0.32em, breakable: false)[
     #if subtitle == none and grade == none {
       grid(
         columns: (1fr, auto),
