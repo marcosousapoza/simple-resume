@@ -1,12 +1,4 @@
-#import "@local/simple-resume:0.2.0": resume
-
-// A single generic row is enough for education, work, projects, and leadership.
-#let dated(title, date) = grid(
-  columns: (1fr, auto),
-  column-gutter: 1em,
-  text(weight: "bold", title),
-  text(weight: "bold", date),
-)
+#import "@local/simple-resume:0.2.0": resume, entry
 
 #show: resume.with(
   name: "Ada Lovelace",
@@ -31,13 +23,13 @@
 
 = Education
 
-#dated(
-  [University of North Carolina at Chapel Hill | Chapel Hill, NC],
-  [May 2027],
+#entry(
+  title: [University of North Carolina at Chapel Hill],
+  location: [Chapel Hill, NC],
+  date: [May 2027],
+  subtitle: [B.S. in Computer Science, Minors in Data Science and Studio Art],
+  grade: [3.7/4.0],
 )
-#text(weight: "bold", style: "italic")[
-  B.S. in Computer Science, Minors in Data Science and Studio Art | GPA: 3.7/4.0
-]
 - *Relevant Courses:* Files and Databases, Modern Web Development, Mobile
   Operating Systems, Computer Organization, Data Structures, Algorithms &
   Analysis, Foundations of Programming
@@ -52,8 +44,12 @@ JavaScript, C, Swift, TypeScript \
 
 = Relevant Experience
 
-#dated([Amazon | Seattle, WA], [June 2026 - Present])
-#emph[Software Development Engineer Intern]
+#entry(
+  title: [Amazon],
+  location: [Seattle, WA],
+  date: [June 2026 - Present],
+  subtitle: [Software Development Engineer Intern],
+)
 - Designed and implemented a scalable backend microservice using *Java and AWS
   (Lambda, DynamoDB)* to automate internal data workflows, reducing API latency
   by *22%*
@@ -63,11 +59,12 @@ JavaScript, C, Swift, TypeScript \
 - Reduced monthly cloud compute costs by *15%* through bottleneck analysis and
   legacy code refactoring
 
-#dated(
-  [UNC-Chapel Hill Department of Computer Science | Chapel Hill, NC],
-  [Aug. 2025 - May 2026],
+#entry(
+  title: [UNC-Chapel Hill Department of Computer Science],
+  location: [Chapel Hill, NC],
+  date: [Aug. 2025 - May 2026],
+  subtitle: [Undergraduate Teaching Assistant - Grading Lead],
 )
-#emph[Undergraduate Teaching Assistant - Grading Lead]
 - Mentored over *600* students enrolled in Introduction to Programming,
   explaining challenging concepts and fundamental programming knowledge to both
   Computer Science and non-technical majors
@@ -75,8 +72,12 @@ JavaScript, C, Swift, TypeScript \
   large-scale grading efforts, while simultaneously hosting 10+ hours of office
   hours a week for students
 
-#dated([Fidelity Investments | Durham, NC], [May 2025 - Aug. 2025])
-#emph[Software Engineering Intern]
+#entry(
+  title: [Fidelity Investments],
+  location: [Durham, NC],
+  date: [May 2025 - Aug. 2025],
+  subtitle: [Software Engineering Intern],
+)
 - Developed a Node.js and Python web app that cut transaction latency by 10
   seconds through backend optimizations, using AI tools to accelerate development
   and debugging
@@ -85,7 +86,11 @@ JavaScript, C, Swift, TypeScript \
 
 = Projects
 
-#dated([MusicBoxd | #emph[HackNC]], [Oct. 2025])
+#entry(
+  title: [MusicBoxd],
+  date: [Oct. 2025],
+  subtitle: [HackNC],
+)
 - Partnered with a team of 3 and developed a fully functional *iOS App* with a
   dynamic *Swift* interface, real-time database retrieval using *Firebase*, and
   *Genius' API* for song and artist retrieval
@@ -94,8 +99,12 @@ JavaScript, C, Swift, TypeScript \
 
 = Leadership Experience
 
-#dated([UNC CS for Social Good | Chapel Hill, NC], [Jan. 2025 - Present])
-#emph[CATCH Project Manager]
+#entry(
+  title: [UNC CS for Social Good],
+  location: [Chapel Hill, NC],
+  date: [Jan. 2025 - Present],
+  subtitle: [CATCH Project Manager],
+)
 - Lead weekly meetings for CATCH, maintain project goals, and develop timelines
   for stages and deployment
 - Contribute to backend development on a web-based application for a local

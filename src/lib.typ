@@ -1,3 +1,50 @@
+// A compact entry header that keeps scan-critical information prominent.
+#let entry(
+  title: none,
+  date: none,
+  subtitle: none,
+  location: none,
+  grade: none,
+) = {
+  let title-line = if location == none {
+    title
+  } else {
+    [#title #text(size: 8.5pt, weight: "regular", fill: rgb("555555"))[
+      | #location
+    ]]
+  }
+
+  block(above: 0.55em, below: 0.18em, breakable: false)[
+    #if subtitle == none and grade == none {
+      grid(
+        columns: (1fr, auto),
+        column-gutter: 1em,
+        text(size: 10pt, weight: "bold", title-line),
+        align(right, text(size: 8.8pt, weight: "semibold", date)),
+      )
+    } else {
+      grid(
+        columns: (1fr, auto),
+        rows: (auto, auto),
+        column-gutter: 1em,
+        row-gutter: 0.32em,
+        text(size: 10pt, weight: "bold", title-line),
+        align(right, text(size: 8.8pt, weight: "semibold", date)),
+        if subtitle == none {
+          []
+        } else {
+          text(size: 9.2pt, weight: "medium", style: "italic", subtitle)
+        },
+        if grade == none {
+          []
+        } else {
+          align(right, text(size: 8.8pt, weight: "medium", [Grade: #grade]))
+        },
+      )
+    }
+  ]
+}
+
 // A compact, traditional resume inspired by classic one-page academic layouts.
 #let resume(
   name: "",
@@ -21,25 +68,25 @@
     size: 9.8pt,
     lang: "en",
   )
-  set par(leading: 0.7em, spacing: 0.95em)
+  set par(leading: 0.72em, spacing: 0.9em)
   set block(spacing: 0.95em)
   set list(
     marker: [•],
-    indent: 1.35em,
-    body-indent: 0.65em,
+    indent: 0.1em,
+    body-indent: 0.55em,
     spacing: 0.55em,
   )
 
   show link: it => underline(text(fill: rgb("0563c1"), it))
   show heading.where(level: 1): it => block(
-    above: 1em,
-    below: 0.3em,
+    above: 1.15em,
+    below: 0.4em,
     width: 100%,
     inset: (bottom: 0.18em),
     stroke: (bottom: 0.7pt),
     sticky: true,
   )[
-    #text(size: 9.6pt, weight: "bold", upper(it.body))
+    #text(size: 10.4pt, weight: "bold", upper(it.body))
   ]
 
   let details = (phone, email, address) + links
