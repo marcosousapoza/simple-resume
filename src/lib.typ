@@ -82,8 +82,7 @@
       #text(size: 8.2pt, weight: "bold", tracking: 0.04em, upper(category))
       #block(
         above: 0.1em,
-        inset: (left: 0.45em),
-        stroke: (left: 0.55pt + rgb("888888")),
+        inset: (left: 1em),
       )[
         #technologies.join([#h(0.3em)·#h(0.3em)])
       ]
