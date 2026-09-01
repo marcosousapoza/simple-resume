@@ -7,7 +7,7 @@ A compact Typst resume template with a traditional, single-column layout.
 ## Usage
 
 ```typst
-#import "@local/simple-resume:0.3.6": resume, entry
+#import "@local/simple-resume:0.4.0": resume, entry, skills
 
 #show: resume.with(
   name: "Ada Lovelace",
@@ -33,6 +33,29 @@ A compact Typst resume template with a traditional, single-column layout.
   subtitle: [B.S. in Computer Science],
   grade: [First Class Honours],
 )
+
+= Technical Skills
+
+#skills(
+  (
+    category: [Languages],
+    technologies: (
+      (
+        technology: [Java],
+        proficiency: [Advanced],
+        scope: [backend services and APIs],
+      ),
+      (technology: [Python], scope: [automation and data analysis]),
+    ),
+  ),
+  (
+    category: [Cloud & DevOps],
+    technologies: (
+      (technology: [AWS], scope: [Lambda and DynamoDB]),
+      (technology: [Docker], scope: [containerized development]),
+    ),
+  ),
+)
 ```
 
 `tagline`, `summary`, and `photo` are optional. `photo` accepts content such as
@@ -44,3 +67,9 @@ Use `entry` for education, experience, projects, and leadership. `title` and
 `date` are required; `subtitle`, `location`, and `grade` are optional. Omit
 `grade` when it is not relevant. Sections and descriptions use regular Typst
 content.
+
+Use `skills` for compact, ATS-friendly technical skill groups. Each group
+requires `category` and one or more `technologies`. Each technology requires a
+`technology` name and at least one of `proficiency` or `scope`. The block uses a
+single-column reading order and plain punctuation rather than tables, icons, or
+rating graphics.

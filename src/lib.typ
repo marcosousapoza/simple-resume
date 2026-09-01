@@ -47,6 +47,48 @@
   ]
 }
 
+// Compact skill groups rendered in a predictable, single-column reading order.
+#let skills(..groups) = {
+  let groups = groups.pos()
+
+  assert(groups.len() > 0, message: "skills requires at least one category")
+
+  for group in groups {
+    assert(type(group) == dictionary, message: "each skills category must be a dictionary")
+
+    let category = group.at("category", default: none)
+    let technologies = group.at("technologies", default: ())
+
+    assert(category != none, message: "each skills category requires category")
+    assert(
+      type(technologies) == array,
+      message: "technologies must be an array",
+    )
+    assert(technologies.len() > 0, message: "each skills category requires technologies")
+
+    let technologies = technologies.map(item => {
+      assert(type(item) == dictionary, message: "each technology must be a dictionary")
+
+      let technology = item.at("technology", default: none)
+      let proficiency = item.at("proficiency", default: none)
+      let scope = item.at("scope", default: none)
+      let details = (proficiency, scope).filter(detail => detail != none)
+
+      assert(technology != none, message: "each technology requires technology")
+      assert(
+        details.len() > 0,
+        message: "each technology requires proficiency or scope",
+      )
+
+      [#text(weight: "semibold", technology) (#details.join([; ]))]
+    })
+
+    block(above: 0em, below: 0.28em, breakable: false)[
+      #text(weight: "bold", category): #technologies.join([;#h(0.25em)])
+    ]
+  }
+}
+
 // A compact, traditional resume inspired by classic one-page academic layouts.
 #let resume(
   name: "",

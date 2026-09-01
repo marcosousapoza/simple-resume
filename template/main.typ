@@ -1,4 +1,4 @@
-#import "@local/simple-resume:0.3.6": resume, entry
+#import "@local/simple-resume:0.4.0": resume, entry, skills
 
 #show: resume.with(
   name: "Ada Lovelace",
@@ -37,10 +37,43 @@
 
 = Technical Skills
 
-*Languages (by proficiency):* Java, Python (Pandas, Matplotlib, Plotly, pytest),
-JavaScript, C, Swift, TypeScript \
-*Tools and Frameworks:* Node.js, React.js, AngularJS, Docker, PyTorch, Git \
-*AI & Data Tools:* GitHub Copilot, OpenAI API
+#skills(
+  (
+    category: [Languages],
+    technologies: (
+      (technology: [Java], scope: [backend microservices and APIs]),
+      (technology: [Python], scope: [automation, data analysis, and testing]),
+      (technology: [JavaScript and TypeScript], scope: [full stack web]),
+      (technology: [Swift], scope: [iOS applications]),
+      (technology: [C], scope: [systems fundamentals]),
+    ),
+  ),
+  (
+    category: [Frameworks & Platforms],
+    technologies: (
+      (technology: [Node.js], scope: [backend services]),
+      (technology: [React.js and AngularJS], scope: [web interfaces]),
+      (technology: [Firebase], scope: [real-time data]),
+    ),
+  ),
+  (
+    category: [Cloud, Data & DevOps],
+    technologies: (
+      (technology: [AWS Lambda and DynamoDB], scope: [serverless workflows]),
+      (technology: [SQL], scope: [query optimization]),
+      (technology: [Docker], scope: [containers]),
+      (technology: [Git], scope: [version control]),
+    ),
+  ),
+  (
+    category: [AI & ML],
+    technologies: (
+      (technology: [PyTorch], scope: [machine learning]),
+      (technology: [OpenAI API], scope: [AI integration]),
+      (technology: [GitHub Copilot], scope: [development and testing]),
+    ),
+  ),
+)
 
 = Relevant Experience
 
