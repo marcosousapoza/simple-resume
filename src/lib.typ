@@ -75,17 +75,20 @@
       assert(technology != none, message: "each technology requires technology")
       assert(scope != none, message: "each technology requires scope")
 
-      [#text(weight: "semibold", technology) (#scope)]
+      block(inset: (left: 1em))[
+        #text(weight: "semibold", technology): #scope
+      ]
     })
 
     block(above: 0em, below: 0.42em, breakable: false)[
-      #text(size: 8.2pt, weight: "bold", tracking: 0.04em, upper(category))
-      #block(
-        above: 0.1em,
-        inset: (left: 1em),
-      )[
-        #technologies.join([#h(0.3em)·#h(0.3em)])
-      ]
+      #set text(size: 9.2pt)
+      #set par(leading: 0.4em)
+      #grid(
+        columns: (1fr,),
+        row-gutter: 0.14em,
+        text(size: 8pt, weight: "bold", tracking: 0.04em, upper(category)),
+        ..technologies,
+      )
     ]
   }
 }

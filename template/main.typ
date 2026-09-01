@@ -1,4 +1,4 @@
-#import "@local/simple-resume:0.5.1": resume, entry, skills
+#import "@local/simple-resume:0.5.2": resume, entry, skills
 
 #show: resume.with(
   name: "Ada Lovelace",
@@ -44,33 +44,35 @@
       (technology: [Java], scope: [backend microservices and APIs]),
       (technology: [Python], scope: [automation, data analysis, and testing]),
       (technology: [JavaScript and TypeScript], scope: [full stack web]),
-      (technology: [Swift], scope: [iOS applications]),
-      (technology: [C], scope: [systems fundamentals]),
+      (technology: [Swift and C], scope: [iOS applications and systems fundamentals]),
     ),
   ),
   (
     category: [Frameworks & Platforms],
     technologies: (
-      (technology: [Node.js], scope: [backend services]),
-      (technology: [React.js and AngularJS], scope: [web interfaces]),
-      (technology: [Firebase], scope: [real-time data]),
+      (
+        technology: [Node.js, React.js, AngularJS, and Firebase],
+        scope: [backend services, web interfaces, and real-time data],
+      ),
     ),
   ),
   (
     category: [Cloud, Data & DevOps],
     technologies: (
-      (technology: [AWS Lambda and DynamoDB], scope: [serverless workflows]),
-      (technology: [SQL], scope: [query optimization]),
-      (technology: [Docker], scope: [containers]),
-      (technology: [Git], scope: [version control]),
+      (
+        technology: [AWS Lambda, DynamoDB, and SQL],
+        scope: [serverless workflows and query optimization],
+      ),
+      (technology: [Docker and Git], scope: [containers and version control]),
     ),
   ),
   (
     category: [AI & ML],
     technologies: (
-      (technology: [PyTorch], scope: [machine learning]),
-      (technology: [OpenAI API], scope: [AI integration]),
-      (technology: [GitHub Copilot], scope: [development and testing]),
+      (
+        technology: [PyTorch, OpenAI API, and GitHub Copilot],
+        scope: [machine learning, AI integration, development, and testing],
+      ),
     ),
   ),
 )
@@ -140,6 +142,5 @@
 )
 - Lead weekly meetings for CATCH, maintain project goals, and develop timelines
   for stages and deployment
-- Contribute to backend development on a web-based application for a local
-  non-profit, emphasizing database efficiency and optimized API calls to improve
-  user experience and reduce wait time
+- Optimize database queries and API calls for a local nonprofit web application
+  to reduce user wait times

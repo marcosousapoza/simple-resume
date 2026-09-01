@@ -7,7 +7,7 @@ A compact Typst resume template with a traditional, single-column layout.
 ## Usage
 
 ```typst
-#import "@local/simple-resume:0.5.1": resume, entry, skills
+#import "@local/simple-resume:0.5.2": resume, entry, skills
 
 #show: resume.with(
   name: "Ada Lovelace",
@@ -70,4 +70,5 @@ content.
 Use `skills` for compact, ATS-friendly technical skill groups. Each group
 requires `category` and one or more `technologies`. Each technology requires a
 `technology` name and a practical `scope`. The block uses stacked categories in
-a single-column reading order rather than tables, icons, or rating graphics.
+a single-column reading order, with each technology on its own indented row,
+rather than tables, icons, or rating graphics.
