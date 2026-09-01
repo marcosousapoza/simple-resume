@@ -70,21 +70,23 @@
       assert(type(item) == dictionary, message: "each technology must be a dictionary")
 
       let technology = item.at("technology", default: none)
-      let proficiency = item.at("proficiency", default: none)
       let scope = item.at("scope", default: none)
-      let details = (proficiency, scope).filter(detail => detail != none)
 
       assert(technology != none, message: "each technology requires technology")
-      assert(
-        details.len() > 0,
-        message: "each technology requires proficiency or scope",
-      )
+      assert(scope != none, message: "each technology requires scope")
 
-      [#text(weight: "semibold", technology) (#details.join([; ]))]
+      [#text(weight: "semibold", technology) (#scope)]
     })
 
-    block(above: 0em, below: 0.28em, breakable: false)[
-      #text(weight: "bold", category): #technologies.join([;#h(0.25em)])
+    block(above: 0em, below: 0.42em, breakable: false)[
+      #text(size: 8.2pt, weight: "bold", tracking: 0.04em, upper(category))
+      #block(
+        above: 0.1em,
+        inset: (left: 0.45em),
+        stroke: (left: 0.55pt + rgb("888888")),
+      )[
+        #technologies.join([#h(0.3em)·#h(0.3em)])
+      ]
     ]
   }
 }
