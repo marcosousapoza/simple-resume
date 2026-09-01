@@ -1,4 +1,4 @@
-#import "@local/simple-resume:0.5.2": resume, entry, skills
+#import "@local/simple-resume:0.5.3": resume, entry, skills
 
 #show: resume.with(
   name: "Ada Lovelace",
@@ -41,10 +41,14 @@
   (
     category: [Languages],
     technologies: (
-      (technology: [Java], scope: [backend microservices and APIs]),
-      (technology: [Python], scope: [automation, data analysis, and testing]),
-      (technology: [JavaScript and TypeScript], scope: [full stack web]),
-      (technology: [Swift and C], scope: [iOS applications and systems fundamentals]),
+      (
+        technology: [Java and Python],
+        scope: [backend APIs, automation, data analysis, and testing],
+      ),
+      (
+        technology: [JavaScript, TypeScript, Swift, and C],
+        scope: [web, iOS, and systems development],
+      ),
     ),
   ),
   (
@@ -60,10 +64,9 @@
     category: [Cloud, Data & DevOps],
     technologies: (
       (
-        technology: [AWS Lambda, DynamoDB, and SQL],
-        scope: [serverless workflows and query optimization],
+        technology: [AWS Lambda, DynamoDB, SQL, Docker, and Git],
+        scope: [serverless workflows, query optimization, containers, and version control],
       ),
-      (technology: [Docker and Git], scope: [containers and version control]),
     ),
   ),
   (

@@ -1,3 +1,12 @@
+// Shared vertical rhythm for headers, body text, entries, and skill groups.
+#let vertical-rhythm = (
+  text-leading: 0.76em,
+  header-line: 0.32em,
+  header-content: 0.3em,
+  entry: 0.7em,
+  skill-group: 0.42em,
+)
+
 // A compact entry header that keeps scan-critical information prominent.
 #let entry(
   title: none,
@@ -13,8 +22,8 @@
   }
 
   block(
-    above: 0.7em,
-    below: if subtitle == none and grade == none { 0.3em } else { 0.8625em },
+    above: vertical-rhythm.entry,
+    below: vertical-rhythm.header-content,
     breakable: false,
   )[
     #if subtitle == none and grade == none {
@@ -29,7 +38,7 @@
         columns: (1fr, auto),
         rows: (auto, auto),
         column-gutter: 1em,
-        row-gutter: 0.32em,
+        row-gutter: vertical-rhythm.header-line,
         text(size: 10pt, weight: "bold", title-line),
         align(right, text(size: 8.8pt, weight: "semibold", date)),
         if subtitle == none {
@@ -75,19 +84,19 @@
       assert(technology != none, message: "each technology requires technology")
       assert(scope != none, message: "each technology requires scope")
 
-      block(inset: (left: 1em))[
-        #text(weight: "semibold", technology): #scope
-      ]
+      [#text(weight: "semibold", technology): #scope]
     })
 
-    block(above: 0em, below: 0.42em, breakable: false)[
+    block(above: 0em, below: vertical-rhythm.skill-group, breakable: false)[
       #set text(size: 9.2pt)
-      #set par(leading: 0.4em)
-      #grid(
-        columns: (1fr,),
-        row-gutter: 0.14em,
+      #set par(leading: vertical-rhythm.text-leading)
+      #stack(
+        dir: ttb,
+        spacing: vertical-rhythm.header-content,
         text(size: 8pt, weight: "bold", tracking: 0.04em, upper(category)),
-        ..technologies,
+        block(inset: (left: 1em))[
+          #technologies.join(linebreak())
+        ],
       )
     ]
   }
@@ -116,7 +125,7 @@
     size: 9.8pt,
     lang: "en",
   )
-  set par(leading: 0.76em, spacing: 0.85em)
+  set par(leading: vertical-rhythm.text-leading, spacing: 0.85em)
   set block(spacing: 0.85em)
   set list(
     marker: [•],

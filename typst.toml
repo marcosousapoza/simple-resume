@@ -1,6 +1,6 @@
 [package]
 name = "simple-resume"
-version = "0.5.2"
+version = "0.5.3"
 entrypoint = "src/lib.typ"
 
 [tool.typst_forge]
